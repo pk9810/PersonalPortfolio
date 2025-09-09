@@ -3,83 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinayak Gajendra Panchal - AI & Machine Learning</title>
-    <meta name="description" content="The personal portfolio for Vinayak Gajendra Panchal, an AI/ML enthusiast building the future.">
+    <title>Prateek Kesarwani - DevOps & Cloud Engineer</title>
+    <meta name="description" content="The personal portfolio for Prateek Kesarwani, a DevOps and Cloud enthusiast building the future of resilient infrastructure.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #10b981, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card-glow {
-            box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.2);
-            transition: all 0.3s ease;
-        }
-        .card-glow:hover {
-             box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.4);
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background-color: #374151; /* gray-700 */
-        }
-        .timeline-item {
-            position: relative;
-            width: 50%;
-        }
-        .timeline-item:nth-child(odd) {
-            padding-right: 2rem;
-            text-align: right;
-            left: 0;
-        }
-        .timeline-item:nth-child(even) {
-            padding-left: 2rem;
-            text-align: left;
-            left: 50%;
-        }
-        .timeline-dot {
-            content: '';
-            position: absolute;
-            top: 1rem;
-            width: 1rem;
-            height: 1rem;
-            background-color: #a78bfa; /* violet-400 */
-            border-radius: 9999px;
-            border: 3px solid #000;
-        }
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -0.5rem;
-        }
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -0.5rem;
-        }
-    </style>
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google's <model-viewer> library for 3D models -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
 </head>
-<body class="bg-black text-slate-300 antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
+<body class="bg-black text-slate-300 antialiased selection:bg-sky-500/20 selection:text-sky-300">
 
     <!-- Header -->
     <header class="sticky top-0 z-50 backdrop-blur-md border-b border-gray-800/50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-slate-200 hover:text-emerald-400 transition-colors">Vinayak Gajendra Panchal</a>
+            <a href="#" class="text-xl font-bold tracking-tight text-slate-200 hover:text-sky-400 transition-colors">Prateek Kesarwani</a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="hover:text-emerald-400 transition-colors">Home</a>
-                <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
-                <a href="#journey" class="hover:text-emerald-400 transition-colors">Work</a>
-                <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+                <a href="#home" class="hover:text-sky-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#journey" class="hover:text-sky-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
             </div>
              <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-300 hover:bg-gray-900">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,11 +42,11 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2">
-            <a href="#home" class="block hover:text-emerald-400 transition-colors py-2">Home</a>
-            <a href="#about" class="block hover:text-emerald-400 transition-colors py-2">About</a>
-            <a href="#journey" class="block hover:text-emerald-400 transition-colors py-2">Work</a>
-            <a href="#projects" class="block hover:text-emerald-400 transition-colors py-2">Projects</a>
-            <a href="#contact" class="block hover:text-emerald-400 transition-colors py-2">Contact</a>
+            <a href="#home" class="block hover:text-sky-400 transition-colors py-2">Home</a>
+            <a href="#about" class="block hover:text-sky-400 transition-colors py-2">About</a>
+            <a href="#journey" class="block hover:text-sky-400 transition-colors py-2">Experience</a>
+            <a href="#projects" class="block hover:text-sky-400 transition-colors py-2">Projects</a>
+            <a href="#contact" class="block hover:text-sky-400 transition-colors py-2">Contact</a>
         </div>
     </header>
 
@@ -101,13 +54,22 @@
 
         <!-- Hero Section -->
         <section id="home" class="text-center py-20 min-h-[70vh] flex flex-col justify-center items-center">
-            <!-- Placeholder for 3D Robot -->
-            <div class="w-48 h-48 mb-8">
-                 <img src="https://placehold.co/200x200/000000/34d399?text=3D+Robot" alt="3D Robot" class="rounded-full animate-pulse">
+            <div class="w-64 h-64 mb-6">
+                 <model-viewer src="https://modelviewer.dev/shared-assets/models/digital-network.glb" 
+                    alt="A 3D model of a digital network" 
+                    ar 
+                    ar-modes="webxr scene-viewer quick-look" 
+                    camera-controls 
+                    auto-rotate
+                    disable-zoom
+                    shadow-intensity="1"
+                    style="width: 100%; height: 100%; --progress-mask: #000;"
+                    class="reveal">
+                </model-viewer>
             </div>
-            <p class="text-2xl md:text-3xl text-slate-200">Hi, I am <span class="text-emerald-400 font-bold">Vinayak</span></p>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-100 mt-2">Building Future with AI & Coffee</h1>
-            <a href="#contact" class="mt-8 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-3 px-6 rounded-lg transition-colors">
+            <p class="text-2xl md:text-3xl text-slate-200 reveal" style="transition-delay: 100ms;">Hi, I am <span class="text-sky-400 font-bold">Prateek</span></p>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-100 mt-2 reveal" style="transition-delay: 200ms;">Building Resilient Infrastructure with Cloud & Code</h1>
+            <a href="#contact" class="mt-8 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-3 px-6 rounded-lg transition-all hover:border-sky-500 reveal" style="transition-delay: 300ms;">
                 Let's work together
             </a>
         </section>
@@ -116,98 +78,106 @@
         <section id="about" class="py-16 md:py-24">
             <div class="grid lg:grid-cols-3 gap-8">
                 <!-- Card 1: Bio -->
-                <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow">
-                    <img src="https://placehold.co/150x150/000000/34d399?text=Vinayak" alt="Vinayak Gajendra Panchal" class="rounded-xl mx-auto mb-4">
-                    <h3 class="text-xl font-bold text-center text-white">Hi, I'm Vinayak Gajendra Panchal</h3>
-                    <p class="text-slate-400 text-center mt-2">With 2+ years of experience, I specialize in shaping AI and ML models, adding a spark of intelligence to real-world solutions.</p>
+                <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow reveal">
+                    <img src="https://placehold.co/400x400/000000/FFFFFF?text=PK" alt="Prateek Kesarwani" class="rounded-xl mx-auto mb-4 w-40 h-40 object-cover">
+                    <h3 class="text-xl font-bold text-center text-white">Hi, I'm Prateek Kesarwani</h3>
+                    <p class="text-slate-400 text-center mt-2">With 3+ years of experience as a DevOps Engineer and pursuing an MSc in Software Engineering, I specialize in automating and optimizing cloud infrastructure.</p>
                 </div>
                 <!-- Card 2: Tech Stack -->
-                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow">
-                    <h3 class="text-xl font-bold text-center text-white mb-6">Tech Stack</h3>
+                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow reveal" style="transition-delay: 150ms;">
+                    <h3 class="text-xl font-bold text-center text-white mb-6">Core Technologies</h3>
                     <div class="flex flex-wrap justify-center items-center gap-6">
-                         <!-- Replace with actual SVGs or icons -->
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center font-bold text-sm">AWS</div>
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center font-bold text-sm">Python</div>
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center font-bold text-sm">PyTorch</div>
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center font-bold text-sm">Scikit</div>
-                        <div class="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center font-bold text-sm">LangChain</div>
+                        <div title="AWS"><svg class="w-16 h-16" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M13.433 5.435v5.048h3.589c.03.003.05.02.05.05v2.859a.05.05 0 01-.05.05h-3.589v4.54a.05.05 0 01-.05.05h-2.736a.05.05 0 01-.05-.05v-4.54H7.008a.05.05 0 01-.05-.05v-2.86a.05.05 0 01.05-.05h3.589V5.435a.05.05 0 01.05-.05h2.736a.05.05 0 01.05.05zM22.032.002L15.24 6.795l1.91 1.908 6.795-6.795L22.032.002zm-3.818 20.203l-1.91-1.91-6.795 6.795 1.91 1.91 6.795-6.795zM1.97 23.998l6.795-6.795-1.91-1.908L.06 22.09l1.91 1.908zM5.79 3.82L3.88 1.91.063 5.727l1.909 1.91L5.79 3.82z"/></svg></div>
+                        <div title="Docker"><svg class="w-16 h-16" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M23.151 10.732c-.34-.41-.72-.8-1.12-1.169-.43-.399-.89-.78-1.37-1.119a7.832 7.832 0 00-1.88-1.04l-.23-.07v-.01a.301.301 0 00-.01-.01c-1.31-1.2-3.021-1.97-4.9-1.97H4.358c-.46 0-.829.35-.829.79v1.1c0 .44.369.79.829.79h8.229c1.98 0 3.63 1.58 3.7 3.56.03.8-.25 1.58-.79 2.22-.54.64-1.28 1.01-2.1 1.01H3.53c-.46 0-.83.35-.83.79v1.1c0 .44.37.79.83.79h10.82c.45 0 .83-.35.83-.79v-1.1c0-.44-.38-.79-.83-.79H9.36c-.52 0-.9-.23-1.12-.66-.22-.43-.2-.86 0-1.26.2-.39.56-.63.98-.63h1.36c.46 0 .83-.35.83-.79v-1.1c0-.44-.37-.79-.83-.79H9.38c-.52 0-.9.23-1.12-.66-.22-.43-.2-.86 0-1.26.2-.39.56-.63.98-.63h3.5c.45 0 .83-.35.83-.79v-1.1c0-.44-.38-.79-.83-.79H6.9c-.52 0-.9.23-1.12-.66-.22-.43-.2-.86 0-1.26.2-.39.56-.63.98-.63h4.63c.45 0 .83-.35.83-.79v-1.1c0-.44-.38-.79-.83-.79H5.19c-.52 0-.9.23-1.12-.66-.22-.43-.2-.86 0-1.26.2-.39.56-.63.98-.63h8.171c1.23 0 2.36.46 3.23 1.25.87.79 1.45 1.83 1.63 2.95.06.41.09.82.09 1.24 0 1.53-.59 2.92-1.57 3.96-.98 1.04-2.29 1.66-3.71 1.66H1.701c-.46 0-.83.35-.83.79v1.1c0 .44.37.79.83.79h11.58c3.9 0 7.23-2.58 8.16-6.22.18-.71.27-1.45.27-2.21.01-.9-.16-1.78-.49-2.61z"/></svg></div>
+                        <div title="Kubernetes"><svg class="w-16 h-16" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M12.44 12L7.3 16.51l-4.86-3.13v-3.13L7.3 5.49 12.44 12zm.23 0l5.13-4.51v3.13l-4.86 3.14.01-1.76zm-.23 6.36l5.13-4.51-5.13-4.52-5.14 4.52 5.14 4.51zM21.56 9.38v5.24l-4.79 3.08-5.13-4.51 5.13-4.52 4.79 3.08z"/></svg></div>
+                        <div title="Jenkins"><svg class="w-16 h-16 p-1" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M12.012 2.375c-1.36 0-2.57.41-3.62 1.05-.5.29-1.02.61-1.49.99l-.2.15c-.23.19-.44.39-.64.6-.2.21-.38.44-.55.67-.17.23-.33.48-.47.74-.14.26-.26.54-.37.82-.1.28-.2.58-.27.88-.07.3-.12.61-.15.93-.03.31-.04.63-.04.95s0 .64.04.95c.03.32.08.63.15.93.07.3.17.6.27.88.11.28.23.56.37.82.14.26.3.51.47.74.17.23.35.46.55.67.2.21.41.41.64.6l.2.15c.47.38.99.7 1.49.99 1.05.64 2.26 1.05 3.62 1.05s2.57-.41 3.62-1.05c.5-.29 1.02-.61 1.49-.99l.2-.15c.23-.19.44-.39.64-.6.2-.21.38-.44.55-.67.17-.23.33-.48.47-.74.14-.26.26.54.37.82.1-.28.2-.58.27-.88.07-.3.12-.61.15-.93.03-.31.04-.63.04-.95s0-.64-.04-.95a6.4 6.4 0 00-.15-.93c-.07-.3-.17-.6-.27-.88a6.5 6.5 0 00-.37-.82c-.14-.26-.3-.51-.47-.74a6.2 6.2 0 00-.55-.67c-.2-.21-.41-.41-.64-.6l-.2-.15c-.47-.38-.99-.7-1.49-.99-1.05-.64-2.26-1.05-3.62-1.05zm3.62 3.62c.15 0 .28.13.28.28v10.3c0 .15-.13.28-.28.28h-1.03c-.16 0-.28-.13-.28-.28v-3.79c0-.15-.13-.28-.28-.28H9.72c-.15 0-.28.13-.28.28v3.79c0 .15-.13.28-.28.28H8.13c-.15 0-.28-.13-.28-.28v-10.3c0-.15.13-.28.28-.28h1.03c.15 0 .28.13.28.28v3.79c0 .15.13.28.28.28h4.29c.15 0 .28-.13.28-.28V6.27c0-.15.13-.28.28-.28h1.03z"/></svg></div>
+                        <div title="Ansible"><svg class="w-16 h-16 p-1" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M12 24c6.628 0 12-5.372 12-12S18.628 0 12 0 0 5.372 0 12s5.372 12 12 12zm-2.03-6.082l-3.32-3.354 1.13-1.12 3.31 3.344-1.12 1.13zm.35-4.482L15.9 7.744l4.13 4.167-5.59 5.64-4.12-4.178zm6.54 3.362l3.32-3.354-1.13-1.12-3.31 3.344 1.12 1.13z"/></svg></div>
+                        <div title="Terraform"><svg class="w-16 h-16 p-1" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#f1f2f3" d="M1.772 1.776v7.518L8.03 13.54V5.99L1.772 1.776zM8.795 5.99v7.55l6.258 4.244V10.27L8.795 5.99zm-7.023 8.28v7.518l6.258 4.212V14.27L1.772 10.056v4.214zm7.023.032v7.55l6.258 4.212V18.52l-6.258-4.2z"/></svg></div>
                     </div>
                 </div>
                  <!-- Card 3: Project in mind? -->
-                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow flex flex-col justify-between">
+                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow flex flex-col justify-between reveal" style="transition-delay: 300ms;">
                     <div>
-                        <img src="https://placehold.co/400x200/000000/34d399?text=Globe" alt="Globe" class="rounded-lg mb-4 opacity-50">
-                        <h3 class="text-xl font-bold text-center text-white">Have a project in mind?</h3>
-                        <p class="text-slate-400 text-center mt-2">I'm based in Canada, and I'm open to remote opportunities.</p>
+                        <img src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="World map network connections" class="rounded-lg mb-4 h-48 w-full object-cover opacity-50">
+                        <h3 class="text-xl font-bold text-center text-white">Seeking New Opportunities</h3>
+                        <p class="text-slate-400 text-center mt-2">Based in Cardiff, UK, I am actively seeking internship and full-time roles where I can contribute to challenging projects.</p>
                     </div>
                     <div class="mt-6 flex flex-col gap-4">
-                        <a href="#contact" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-colors">Get in touch</a>
-                         <a href="#" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-colors">My Life in Bullet Points</a>
+                        <a href="#contact" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-all hover:border-sky-500">Get in touch</a>
+                         <button id="open-modal-button" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-all hover:border-sky-500">Achievements & Certs</button>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- My AI Journey -->
+        <!-- My Journey -->
         <section id="journey" class="py-16 md:py-24">
-             <h2 class="text-3xl font-bold text-slate-100 mb-16 text-center">My AI Journey</h2>
+             <h2 class="text-3xl font-bold text-slate-100 mb-16 text-center reveal">My Journey</h2>
              <div class="relative timeline max-w-3xl mx-auto">
                 <!-- Item 1 -->
-                <div class="timeline-item mb-8">
+                <div class="timeline-item mb-8 reveal">
                     <div class="timeline-dot"></div>
-                    <p class="text-sm font-medium text-emerald-400">Sep 2024 - Present</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">AI/ML Engineer</h3>
-                    <p class="text-md text-slate-400">Leni</p>
+                    <p class="text-sm font-medium text-sky-400">2024 - 2025</p>
+                    <h3 class="text-xl font-bold text-slate-100 mt-1">MSc Software Engineering</h3>
+                    <p class="text-md text-slate-400">Cardiff University</p>
                     <ul class="mt-2 text-slate-400 list-disc list-inside text-left md:text-right">
-                        <li>Developing a conversational interface.</li>
-                        <li>Supported simple table insights, complex KPIs.</li>
-                        <li>Cut execution time, reduced costs by 40%.</li>
+                        <li>Predicted Grade: Distinction</li>
+                        <li>Coursework: DevOps, OOPS, Web Technologies</li>
                     </ul>
                 </div>
                 <!-- Item 2 -->
-                 <div class="timeline-item mb-8">
+                 <div class="timeline-item mb-8 reveal">
                     <div class="timeline-dot"></div>
-                    <p class="text-sm font-medium text-emerald-400">May 2024 - Aug 2024</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">Machine Learning Associate</h3>
-                    <p class="text-md text-slate-400">Vector Institute and Leni</p>
+                    <p class="text-sm font-medium text-sky-400">Jan 2022 - June 2024</p>
+                    <h3 class="text-xl font-bold text-slate-100 mt-1">Associate DevOps Engineer</h3>
+                    <p class="text-md text-slate-400">SAP LABS, India</p>
                      <ul class="mt-2 text-slate-400 list-disc list-inside">
-                        <li>Created proof of concept simplifying real estate data.</li>
-                        <li>Built a robust pipeline to fetch and process data.</li>
+                        <li>Automated RabbitMQ user management via AWS Lambda.</li>
+                        <li>Reduced monitoring costs by 25% migrating to Prometheus.</li>
+                        <li>Managed Kubernetes clusters, ensuring 99.8% uptime.</li>
                     </ul>
                 </div>
                 <!-- Item 3 -->
-                <div class="timeline-item">
+                <div class="timeline-item mb-8 reveal">
                     <div class="timeline-dot"></div>
-                    <p class="text-sm font-medium text-emerald-400">Jan 2023 - Apr 2024</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">Master Student - Computer Engineering</h3>
-                    <p class="text-md text-slate-400">University of Waterloo</p>
+                     <p class="text-sm font-medium text-sky-400">June 2021 - Dec 2021</p>
+                    <h3 class="text-xl font-bold text-slate-100 mt-1">DevOps Engineer</h3>
+                    <p class="text-md text-slate-400">Bigstep Technologies</p>
                      <ul class="mt-2 text-slate-400 list-disc list-inside text-left md:text-right">
-                        <li>Fine-tuned SimVP-gSTA for vehicle trajectory prediction.</li>
-                        <li>Developed an AI-powered self-adaptive task scheduler.</li>
+                        <li>Developed Ansible Playbooks to upgrade and maintain servers.</li>
+                        <li>Cut deployment time by 40% with a one-click pipeline.</li>
+                        <li>Authored Dockerfiles for 10+ microservices.</li>
                     </ul>
+                </div>
+                 <!-- Item 4 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                     <p class="text-sm font-medium text-sky-400">2017 - 2021</p>
+                    <h3 class="text-xl font-bold text-slate-100 mt-1">B.Tech Electronics & Communication</h3>
+                    <p class="text-md text-slate-400">Manipal University Jaipur</p>
                 </div>
              </div>
         </section>
 
         <!-- Projects -->
         <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 text-center">My Projects</h2>
-            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 card-glow grid lg:grid-cols-2 gap-8 items-center">
+            <h2 class="text-3xl font-bold text-slate-100 mb-12 text-center reveal">Featured Project</h2>
+            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 card-glow grid lg:grid-cols-2 gap-8 items-center reveal">
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Transformers: Extractive Question Answering for E-Commerce</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2">Sports League Website for CreditSafe</h3>
                     <p class="text-slate-400 mb-4">
-                        I researched leveraging pre-trained transformers to enhance extractive Q&A performance for e-commerce, focusing on cell phones and accessories. With a focus on performance and scalability, the project utilized Hugging Face transformers, PyTorch, and Kaggle GPU P100.
+                        Developed a full-stack industrial project for CreditSafe. Built the robust backend using Spring Boot and Java, designed a responsive and interactive frontend with HTML, CSS, and JavaScript, and utilized MariaDB for efficient and reliable data management.
                     </p>
                      <div class="flex gap-2 flex-wrap mb-6">
-                        <span class="bg-emerald-500/10 text-emerald-400 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
-                        <span class="bg-emerald-500/10 text-emerald-400 text-xs font-medium px-2.5 py-1 rounded-full">PyTorch</span>
-                        <span class="bg-emerald-500/10 text-emerald-400 text-xs font-medium px-2.5 py-1 rounded-full">Hugging Face</span>
+                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Java</span>
+                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Spring Boot</span>
+                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">JavaScript</span>
+                         <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">MariaDB</span>
                     </div>
-                    <a href="#" class="text-emerald-400 font-medium hover:underline">Check project &rarr;</a>
+                    <a href="#" class="text-sky-400 font-medium hover:underline">View on GitHub &rarr;</a>
                 </div>
                  <div>
-                    <!-- Placeholder for retro computer image -->
-                    <img src="https://placehold.co/600x400/000000/34d399?text=Project+Visual" alt="Project Visual" class="rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e2775d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Web application dashboard" class="rounded-lg">
                  </div>
             </div>
         </section>
@@ -215,27 +185,34 @@
         <!-- Contact -->
         <section id="contact" class="py-16 md:py-24">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                 <div>
-                     <!-- Placeholder for 3D Earth -->
-                     <img src="https://placehold.co/500x500/000000/a78bfa?text=Contact+Visual" alt="3D Earth" class="rounded-full opacity-75">
+                 <div class="reveal">
+                     <model-viewer src="https://modelviewer.dev/shared-assets/models/server.glb" 
+                        alt="A 3D model of a server rack"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="1"
+                        style="width: 100%; height: 500px; --progress-mask: #000;">
+                    </model-viewer>
                  </div>
-                 <div>
-                    <h2 class="text-3xl font-bold text-slate-100 mb-4">Let's talk</h2>
-                    <p class="text-slate-400 max-w-xl mb-8">Whether you have an AI/ML project in mind, need some generative AI magic, or just want to chat about how transformers are taking over the world, feel free to reach out!</p>
-                    <form action="#" method="POST">
+                 <div class="reveal" style="transition-delay: 150ms;">
+                    <h2 class="text-3xl font-bold text-slate-100 mb-4">Let's Connect</h2>
+                    <p class="text-slate-400 max-w-xl mb-8">Whether you have an interesting opportunity, a project in mind, or just want to chat about cloud technologies and automation, feel free to reach out!</p>
+                    <form id="contact-form" action="#" method="POST">
                         <div class="mb-4">
                             <label for="full-name" class="sr-only">Full Name</label>
-                            <input type="text" name="full-name" id="full-name" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Full Name">
+                            <input type="text" name="full-name" id="full-name" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Full Name" required>
                         </div>
                         <div class="mb-4">
                              <label for="email" class="sr-only">Email</label>
-                            <input type="email" name="email" id="email" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Email Address">
+                            <input type="email" name="email" id="email" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Email Address" required>
                         </div>
                          <div class="mb-4">
                              <label for="message" class="sr-only">Message</label>
-                            <textarea name="message" id="message" rows="4" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Your Message"></textarea>
+                            <textarea name="message" id="message" rows="4" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">Send Message</button>
+                        <button id="submit-button" type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:bg-sky-800 disabled:cursor-not-allowed">Send Message</button>
                     </form>
                  </div>
             </div>
@@ -245,27 +222,52 @@
 
     <!-- Footer -->
     <footer class="border-t border-gray-800/50">
-        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
-             <p>&copy; 2025 Vinayak Gajendra Panchal. All Rights Reserved.</p>
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500 reveal">
+             <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" target="_blank" class="hover:text-sky-400 transition-colors" title="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#" target="_blank" class="hover:text-sky-400 transition-colors" title="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+             </div>
+             <p>&copy; 2025 Prateek Kesarwani. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+    <!-- Modal HTML -->
+    <div id="bullet-points-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4 opacity-0 pointer-events-none">
+        <div id="modal-content" class="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-2xl w-full transform scale-95">
+            <div class="flex justify-between items-center mb-6">
+                 <h2 class="text-2xl font-bold text-slate-100">Achievements & Certifications</h2>
+                 <button id="close-modal-button" class="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
+            </div>
+            <div class="text-slate-300 space-y-4">
+                <div>
+                    <h3 class="font-bold text-sky-400 mb-2">Key Achievements</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Reduced manual operational interventions by 30% by automating RabbitMQ user management with AWS Lambda.</li>
+                        <li>Cut organizational monitoring costs by 25% by leading the migration from Datadog to Prometheus.</li>
+                        <li>Improved system failover capabilities and reduced downtime by 15% by implementing a floating IP setup for HAproxy.</li>
+                        <li>Decreased server provisioning time by 30 minutes per instance with automated LAMP stack installation scripts.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-sky-400 mb-2">Certifications</h3>
+                     <ul class="list-disc list-inside space-y-2">
+                        <li>AWS Certified Solutions Architect - Associate</li>
+                        <li>IBM MQ Developer Essentials</li>
+                        <li>Linux Administration Bootcamp: Go from Beginner to Advanced</li>
+                        <li>SAP Python for Beginners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
+
