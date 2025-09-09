@@ -54,26 +54,3 @@ modal.addEventListener('click', (event) => {
     }
 });
 
-// --- Contact Form Submission Logic ---
-const contactForm = document.getElementById('contact-form');
-const submitButton = document.getElementById('submit-button');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent actual form submission for this demo
-    
-    const originalButtonText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-
-    // Simulate a network request
-    setTimeout(() => {
-        submitButton.textContent = 'Message Sent! ✅';
-        contactForm.reset(); // Clear the form
-        
-        // Revert button to original state after a few seconds
-        setTimeout(() => {
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
-        }, 3000);
-    }, 1500); // Simulate 1.5 second delay
-});
