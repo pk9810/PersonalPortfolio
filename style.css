@@ -1,0 +1,89 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #10b981, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-glow {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+     box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.5);
+     transform: translateY(-5px);
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #374151;
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: 2rem;
+    text-align: right;
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: 2rem;
+    text-align: left;
+    left: 50%;
+}
+
+.timeline-dot {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #a78bfa;
+    border-radius: 9999px;
+    border: 3px solid #000;
+    z-index: 10;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -0.5rem;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -0.5rem;
+}
+
+/* Styles for scroll animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles for the modal */
+#bullet-points-modal {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#modal-content {
+    transition: transform 0.3s ease-in-out;
+}
