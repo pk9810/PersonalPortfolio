@@ -203,24 +203,90 @@
 
         <!-- Projects -->
         <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 text-center reveal">Featured Project</h2>
-            <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8 card-glow grid lg:grid-cols-2 gap-8 items-center reveal">
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Sports League Website for CreditSafe</h3>
-                    <p class="text-slate-400 mb-4">
-                        Developed a full-stack industrial project for CreditSafe. Built the robust backend using Spring Boot and Java, designed a responsive and interactive frontend with HTML, CSS, and JavaScript, and utilized MariaDB for efficient and reliable data management.
-                    </p>
-                     <div class="flex gap-2 flex-wrap mb-6">
-                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Java</span>
-                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Spring Boot</span>
-                        <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">JavaScript</span>
-                         <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">MariaDB</span>
+            <h2 class="text-3xl font-bold text-slate-100 mb-12 text-center reveal">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Sports League -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Sports League Website</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Full-stack industrial project for CreditSafe with a Spring Boot backend, interactive frontend, and MariaDB for data management.</p>
                     </div>
-                    <a href="#" class="text-sky-400 font-medium hover:underline">View on GitHub &rarr;</a>
+                    <div>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Java</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Spring Boot</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">MariaDB</span>
+                        </div>
+                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
+                    </div>
                 </div>
-                 <div>
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e2775d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Web application dashboard" class="rounded-lg">
-                 </div>
+
+                <!-- Project 2: GitHub Integration -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 100ms;">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">CI with Jenkins for NodeJS</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Deployed a NodeJS app on an EC2 instance using Jenkins for CI, with automated deployment via webhooks and containers.</p>
+                    </div>
+                    <div>
+                         <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS EC2</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Jenkins</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Docker</span>
+                        </div>
+                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Circle-CI -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 200ms;">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">CI with Circle-CI for Python</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Integrated Circle-CI with GitHub to automatically build, test, and deploy a Python application onto an EC2 machine.</p>
+                    </div>
+                    <div>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Circle-CI</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
+                        </div>
+                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Argo-CD -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 300ms;">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">CD with Argo-CD</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Utilized Argo-CD for continuous deployment on a Kubernetes cluster, pulling from a Docker Image registry.</p>
+                    </div>
+                     <div>
+                        <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Argo-CD</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Kubernetes</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Docker</span>
+                        </div>
+                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Apache Deployment -->
+                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 400ms;">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cloud Apache Deployment</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Provisioned a secure AWS infrastructure using Terraform to deploy an Apache website with a full CI/CD pipeline.</p>
+                    </div>
+                    <div>
+                         <div class="flex gap-2 flex-wrap mb-4">
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Terraform</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Jenkins</span>
+                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">SonarQube</span>
+                        </div>
+                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
