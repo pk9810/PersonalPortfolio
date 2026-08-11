@@ -1,383 +1,493 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prateek Kesarwani - DevOps & Cloud Engineer</title>
-    <meta name="description" content="The personal portfolio for Prateek Kesarwani, a DevOps and Cloud enthusiast building the future of resilient infrastructure.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom Stylesheet -->
+    <title>Prateek Kesarwani — DevOps & Cloud Engineer</title>
+    <meta name="description" content="Prateek Kesarwani — DevOps Engineer at Zeus Labs. AWS CDK, GPU platforms, observability, and resilient cloud infrastructure.">
+    <meta name="theme-color" content="#070707">
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Google's <model-viewer> library for 3D models -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-
 </head>
-<body class="bg-black text-slate-300 antialiased selection:bg-sky-500/20 selection:text-sky-300">
+<body class="theme-voltage">
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+    <div class="aurora" aria-hidden="true">
+        <span class="aurora-blob aurora-a"></span>
+        <span class="aurora-blob aurora-b"></span>
+        <span class="aurora-blob aurora-c"></span>
+    </div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-gray-800/50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-slate-200 hover:text-sky-400 transition-colors">Prateek Kesarwani</a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="hover:text-sky-400 transition-colors">Home</a>
-                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
-                <a href="#journey" class="hover:text-sky-400 transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary">
+            <a href="#home" class="brand">
+                <span class="brand-mark">PK</span>
+                <span class="brand-text">Prateek Kesarwani</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" data-nav>Home</a>
+                <a href="#about" data-nav>About</a>
+                <a href="#journey" data-nav>Experience</a>
+                <a href="#projects" data-nav>Projects</a>
+                <a href="#contact" data-nav>Contact</a>
             </div>
-             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-slate-300 hover:bg-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button id="mobile-menu-button" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2">
-            <a href="#home" class="block hover:text-sky-400 transition-colors py-2">Home</a>
-            <a href="#about" class="block hover:text-sky-400 transition-colors py-2">About</a>
-            <a href="#journey" class="block hover:text-sky-400 transition-colors py-2">Experience</a>
-            <a href="#projects" class="block hover:text-sky-400 transition-colors py-2">Projects</a>
-            <a href="#contact" class="block hover:text-sky-400 transition-colors py-2">Contact</a>
-        </div>
     </header>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+        <a href="#home" data-nav>Home</a>
+        <a href="#about" data-nav>About</a>
+        <a href="#journey" data-nav>Experience</a>
+        <a href="#projects" data-nav>Projects</a>
+        <a href="#contact" data-nav>Contact</a>
+    </div>
 
-    <main class="container mx-auto px-6 py-12 md:py-20">
-
-        <!-- Hero Section -->
-        <section id="home" class="text-center py-20 min-h-[70vh] flex flex-col justify-center items-center">
-            <div class="w-64 h-64 mb-6">
-                 <!-- FIXED MODEL-VIEWER SRC -->
-                 <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                    alt="A 3D model of an astronaut" 
-                    ar 
-                    ar-modes="webxr scene-viewer quick-look" 
-                    camera-controls 
-                    auto-rotate
-                    disable-zoom
-                    shadow-intensity="1"
-                    style="width: 100%; height: 100%; --progress-mask: #000;"
-                    class="reveal">
-                </model-viewer>
-            </div>
-            <p class="text-2xl md:text-3xl text-slate-200 reveal" style="transition-delay: 100ms;">Hi, I am <span class="text-sky-400 font-bold">Prateek</span></p>
-            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-100 mt-2 reveal" style="transition-delay: 200ms;">Building Resilient Infrastructure with Cloud & Code</h1>
-            <a href="#contact" class="mt-8 bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-3 px-6 rounded-lg transition-all hover:border-sky-500 reveal" style="transition-delay: 300ms;">
-                Let's work together
-            </a>
-        </section>
-
-        <!-- About Me -->
-        <section id="about" class="py-16 md:py-24">
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Card 1: Bio -->
-                <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow reveal">
-                    <img src="https://placehold.co/400x400/000000/FFFFFF?text=PK" alt="Prateek Kesarwani" class="rounded-xl mx-auto mb-4 w-40 h-40 object-cover">
-                    <h3 class="text-xl font-bold text-center text-white">Hi, I'm Prateek Kesarwani</h3>
-                    <p class="text-slate-400 text-center mt-2">With 3+ years of experience as a DevOps Engineer and pursuing an MSc in Software Engineering, I specialize in automating and optimizing cloud infrastructure.</p>
-                </div>
-                <!-- Card 2: Tech Stack -->
-                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow reveal" style="transition-delay: 150ms;">
-                    <h3 class="text-xl font-bold text-center text-white mb-6">Core Technologies</h3>
-                    <div class="flex flex-wrap justify-center items-center gap-6">
-                        <div title="Python"><img src="Images/Python.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Typescript"><img src="Images/Typescript.webp" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="JAVA"><img src="Images/Java.webp" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Javascript"><img src="Images/javascript.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="AWS"><img src="Images/aws.jpg" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Terraform"><img src="Images/terraform.svg" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Jenkins"><img src="Images/Jenkins.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Circle-CI"><img src="Images/Circle-ci.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Github Action"><img src="Images/Github-Action.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Ansible"><img src="Images/Ansible.jpg" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Argo-CD"><img src="Images/Argo.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Sonar-Q"><img src="Images/Sonar.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="React-js"><img src="Images/react.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Maria-DB"><img src="Images/Maria.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Openstack"><img src="Images/openstack.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="Google Cloud Platform(GCP)"><img src="Images/gcp.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="PyTest"><img src="Images/Pytest.svg" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="JUnit"><img src="Images/Junit.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="AWS-CDK"><img src="Images/AWS-CDK.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="JSON"><img src="Images/json.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
-                        <div title="HTML"><img src="Images/HTML.png" alt="Python logo" class="w-16 h-16 object-contain"></div>
+    <main>
+        <section id="home" class="hero">
+            <p class="hero-watermark" aria-hidden="true">DEVOPS</p>
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="status-pill reveal">
+                        <span class="status-dot"></span>
+                        DevOps Engineer · Zeus Labs, London
+                    </p>
+                    <h1 class="hero-brand reveal" id="hero-brand" aria-label="Prateek Kesarwani">
+                        <span class="brand-line">Prateek</span>
+                        <span class="brand-line accent-line">Kesarwani</span>
+                    </h1>
+                    <p class="hero-headline reveal" style="transition-delay: 90ms;">
+                        <span class="word">Building</span>
+                        <span class="word">resilient</span>
+                        <span class="word">infrastructure</span>
+                        <span class="word">with</span>
+                        <span class="word gradient-word">cloud</span>
+                        <span class="word">&amp;</span>
+                        <span class="word gradient-word">code</span>
+                    </p>
+                    <p class="hero-support reveal" style="transition-delay: 150ms;">DevOps engineer at Zeus Labs — AWS CDK, GPU platforms, and observability for systems that stay up when it matters.</p>
+                    <div class="hero-actions reveal" style="transition-delay: 210ms;">
+                        <a href="#contact" class="hero-cta magnetic" data-magnetic>
+                            <span>Let’s work together</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#projects" class="hero-ghost">See work</a>
                     </div>
                 </div>
-                 <!-- Card 3: Project in mind? -->
-                 <div class="bg-gray-900/50 border border-gray-800 p-6 rounded-xl card-glow flex flex-col justify-between reveal" style="transition-delay: 300ms;">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="World map network connections" class="rounded-lg mb-4 h-48 w-full object-cover opacity-50">
-                        <h3 class="text-xl font-bold text-center text-white">Seeking New Opportunities</h3>
-                        <p class="text-slate-400 text-center mt-2">Based in Cardiff, UK, I am actively seeking internship and full-time roles where I can contribute to challenging projects.</p>
-                    </div>
-                    <div class="mt-6 flex flex-col gap-4">
-                        <a href="#contact" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-all hover:border-sky-500">Get in touch</a>
-                         <button id="open-modal-button" class="w-full text-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-slate-100 font-medium py-2 px-4 rounded-lg transition-all hover:border-sky-500">Achievements & Certs</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- My Journey -->
-        <section id="journey" class="py-16 md:py-24">
-             <h2 class="text-3xl font-bold text-slate-100 mb-16 text-center reveal">My Journey</h2>
-             <div class="relative timeline max-w-3xl mx-auto">
-                <!-- Item 1 -->
-                <div class="timeline-item mb-8 reveal">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-medium text-sky-400">2024 - 2025</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">MSc Software Engineering</h3>
-                    <p class="text-md text-slate-400">Cardiff University</p>
-                    <ul class="mt-2 text-slate-400 list-disc list-inside text-left md:text-right">
-                        <li>Predicted Grade: Distinction</li>
-                        <li>Coursework: DevOps, OOPS, Web Technologies</li>
-                    </ul>
-                </div>
-                <!-- Item 2 -->
-                 <div class="timeline-item mb-8 reveal">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm font-medium text-sky-400">Jan 2022 - June 2024</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">Associate DevOps Engineer</h3>
-                    <p class="text-md text-slate-400">SAP LABS, India</p>
-                     <ul class="mt-2 text-slate-400 list-disc list-inside">
-                        <li>Designed and implemented an AWS Lambda function for automated creation and management of RabbitMQ
-                            users, improving operational efficiency by reducing manual interventions by 30 percent.</li>
-                        <li>Leveraged AWS Secrets Manager to automate password rotation for RabbitMQ users, enhancing security compliance and reducing risk of credential exposure by 40 percent.</li>
-                        <li>Authored Python scripts to fetch server details in JSON format, leading to the creation of a real-time dashboard,
-                            improving operational visibility by 35percent.</li>
-                        <li>Configured AWS EventBridge to track key RabbitMQ server metrics, improving real-time alerting and reducing
-                            response time to server issues by 25 percent.</li>
-                        <li>Led the migration from Datadog to Prometheus, cutting down the organization’s monitoring costs by 25percent.</li>
-                        <li>Implemented floating IP setup for HAproxy Load Balancer, improving system failover capabilities and reducing
-                            downtime by 15percent.</li>
-                        <li>Provisioned new clusters for onboarding customers using Terraform, allowing for the rapid deployment of services
-                            with consistent configurations.</li>
-                        <li>Conducted unit and integration testing for REST APIs using the PyTest framework, increasing code quality
-                            and reducing bugs by 30percent</li>
-                        <li>Configured GitHub apps for actions with Personal Access Tokens (PATs), enhancing workflow automation and
-                            security.</li>
-                        <li>Built and maintained GitOps pipelines from Signavio GitHub to SAP Enterprise, streamlining code deployment
-                            across teams.</li>
-                        <li>Provisioned RabbitMQ infrastructure from scratch for the organization using AWS-CDK with TypeScript, facilitating reliable message queuing for 200+ microservices.</li>
-                        <li>Integrated Circle-CI and GitHub Actions to clone Signavio GitHub to SAP Enterprise, improving code synchronization efficiency by 40percent.</li>
-                        <li>Managed Kubernetes clusters, ensuring 99.8percent uptime for microservices, resulting in a seamless and reliable
-                            customer experience.</li>
-                    </ul>
-                </div>
-                <!-- Item 3 -->
-                <div class="timeline-item mb-8 reveal">
-                    <div class="timeline-dot"></div>
-                     <p class="text-sm font-medium text-sky-400">June 2021 - Dec 2021</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">DevOps Engineer</h3>
-                    <p class="text-md text-slate-400">Bigstep Technologies</p>
-                     <ul class="mt-2 text-slate-400 list-disc list-inside text-left md:text-right">
-                        <li>Developed Ansible Playbooks to maintain and upgrade servers, reducing manual update efforts by 50 percent
-                            and ensuring consistent configurations.</li>
-                        <li>Designed a one-click deployment pipeline, leading to a 40 percent reduction in deployment time and accelerating
-                            release cycles.</li>
-                        <li>Created Bash scripts for automated LAMP stack installation, decreasing server provisioning time by 30 minutes
-                            per instance.</li>
-                        <li>Authored Dockerfiles to build Docker images, streamlining containerization and enabling efficient deployment of
-                            10+ microservices.</li>
-                        <li>Implemented Python scripts for automated log removal, reducing disk space usage by 20 percent and enhancing
-                            system performance by routinely cleaning logs older than 30 days.</li>
-                    </ul>
-                </div>
-                 <!-- Item 4 -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                     <p class="text-sm font-medium text-sky-400">2017 - 2021</p>
-                    <h3 class="text-xl font-bold text-slate-100 mt-1">B.Tech Electronics & Communication</h3>
-                    <p class="text-md text-slate-400">Manipal University Jaipur</p>
-                </div>
-             </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="py-16 md:py-24">
-            <h2 class="text-3xl font-bold text-slate-100 mb-12 text-center reveal">My Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project 1: Sports League -->
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Sports League Website</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Full-stack industrial project for CreditSafe with a Spring Boot backend, interactive frontend, and MariaDB for data management.</p>
-                    </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-4">
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Java</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Spring Boot</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">MariaDB</span>
-                        </div>
-                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 2: GitHub Integration -->
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 100ms;">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">CI with Jenkins for NodeJS</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Deployed a NodeJS app on an EC2 instance using Jenkins for CI, with automated deployment via webhooks and containers.</p>
-                    </div>
-                    <div>
-                         <div class="flex gap-2 flex-wrap mb-4">
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS EC2</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Jenkins</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Docker</span>
-                        </div>
-                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Circle-CI -->
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 200ms;">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">CI with Circle-CI for Python</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Integrated Circle-CI with GitHub to automatically build, test, and deploy a Python application onto an EC2 machine.</p>
-                    </div>
-                    <div>
-                        <div class="flex gap-2 flex-wrap mb-4">
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Circle-CI</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
-                        </div>
-                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Argo-CD -->
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 300ms;">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">CD with Argo-CD</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Utilized Argo-CD for continuous deployment on a Kubernetes cluster, pulling from a Docker Image registry.</p>
-                    </div>
-                     <div>
-                        <div class="flex gap-2 flex-wrap mb-4">
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Argo-CD</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Kubernetes</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Docker</span>
-                        </div>
-                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Project 5: Apache Deployment -->
-                <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 card-glow reveal flex flex-col justify-between" style="transition-delay: 400ms;">
-                    <div>
-                        <h3 class="text-xl font-bold text-white mb-2">Cloud Apache Deployment</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Provisioned a secure AWS infrastructure using Terraform to deploy an Apache website with a full CI/CD pipeline.</p>
-                    </div>
-                    <div>
-                         <div class="flex gap-2 flex-wrap mb-4">
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Terraform</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">Jenkins</span>
-                            <span class="bg-sky-500/10 text-sky-400 text-xs font-medium px-2.5 py-1 rounded-full">SonarQube</span>
-                        </div>
-                        <a href="#" class="text-sky-400 font-medium hover:underline text-sm">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="py-16 md:py-24">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                 <div class="reveal">
-                     <model-viewer src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" 
-                        alt="A 3D model of a robot"
-                        ar
-                        ar-modes="webxr scene-viewer quick-look"
+                <div class="hero-stage reveal" style="transition-delay: 120ms;" data-parallax>
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="stage-frame" aria-hidden="true"></div>
+                    <model-viewer
+                        class="hero-model"
+                        src="models/Astronaut.glb"
+                        poster="models/astronaut-poster.svg"
+                        alt="Interactive 3D astronaut model"
                         camera-controls
                         auto-rotate
+                        disable-zoom
+                        interaction-prompt="none"
                         shadow-intensity="1"
-                        style="width: 100%; height: 500px; --progress-mask: #000;">
+                        exposure="1.15"
+                        loading="eager">
                     </model-viewer>
-                 </div>
-                 <div class="reveal" style="transition-delay: 150ms;">
-                    <h2 class="text-3xl font-bold text-slate-100 mb-4">Let's Connect</h2>
-                    <p class="text-slate-400 max-w-xl mb-8">Whether you have an interesting opportunity, a project in mind, or just want to chat about cloud technologies and automation, feel free to reach out!</p>
-                    <form id="contact-form" action="https://formsubmit.co/kesarwaniprateek98@gmail.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <div class="mb-4">
-                            <label for="full-name" class="sr-only">Full Name</label>
-                            <input type="text" name="full-name" id="full-name" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Full Name" required>
-                        </div>
-                        <div class="mb-4">
-                             <label for="email" class="sr-only">Email</label>
-                            <input type="email" name="email" id="email" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Email Address" required>
-                        </div>
-                         <div class="mb-4">
-                             <label for="message" class="sr-only">Message</label>
-                            <textarea name="message" id="message" rows="4" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button id="submit-button" type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg transition-colors disabled:bg-sky-800 disabled:cursor-not-allowed">Send Message</button>
-                    </form>
-                 </div>
+                </div>
             </div>
         </section>
 
+        <div class="marquee marquee-a" aria-hidden="true">
+            <div class="marquee-track">
+                <span>AWS</span><span>Kubernetes</span><span>Terraform</span><span>CI/CD</span><span>GitOps</span><span>Observability</span><span>Platform Engineering</span><span>Automation</span>
+                <span>AWS</span><span>Kubernetes</span><span>Terraform</span><span>CI/CD</span><span>GitOps</span><span>Observability</span><span>Platform Engineering</span><span>Automation</span>
+            </div>
+        </div>
+        <div class="marquee marquee-b" aria-hidden="true">
+            <div class="marquee-track reverse">
+                <span>Zeus Labs</span><span>AWS CDK</span><span>Bedrock</span><span>ECS Fargate</span><span>Grafana</span><span>GPU Platform</span><span>Observability</span><span>SAP Labs</span>
+                <span>Zeus Labs</span><span>AWS CDK</span><span>Bedrock</span><span>ECS Fargate</span><span>Grafana</span><span>GPU Platform</span><span>Observability</span><span>SAP Labs</span>
+            </div>
+        </div>
+
+        <!-- Zeus-style sticky scrubbed headline -->
+        <section class="pin-section" id="pin-story" aria-label="Mission">
+            <div class="pin-sticky">
+                <p class="pin-kicker">// mission_signal</p>
+                <h2 class="pin-line" id="pin-line">
+                    <span class="pin-word">Automating</span>
+                    <span class="pin-word">cloud</span>
+                    <span class="pin-word">systems</span>
+                    <span class="pin-word">in</span>
+                    <span class="pin-word">real</span>
+                    <span class="pin-word">time</span>
+                    <span class="pin-word">—</span>
+                    <span class="pin-word">reliable</span>
+                    <span class="pin-word">delivery</span>
+                    <span class="pin-word">moves</span>
+                    <span class="pin-word">beyond.</span>
+                </h2>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-index">01 — Profile</p>
+                    <h2 class="section-title title-mask">About</h2>
+                    <p class="section-lead">Automation, cloud platforms, and delivery pipelines — with a bias for reliability.</p>
+                </div>
+                <div class="about-grid bento" data-stagger>
+                    <article class="panel glass panel-bio stagger-item">
+                        <div class="avatar" aria-hidden="true">PK</div>
+                        <h3>Hi, I’m Prateek</h3>
+                        <p>DevOps engineer at Zeus Labs with 4+ years shipping AWS platforms, GPU automation, and observability — plus an MSc in Software Engineering from Cardiff University.</p>
+                    </article>
+
+                    <article class="panel glass panel-tech stagger-item">
+                        <h3>Core technologies</h3>
+                        <div class="tech-grid">
+                            <div title="Python"><img src="Images/Python.png" alt="Python" width="44" height="44" loading="lazy"></div>
+                            <div title="TypeScript"><img src="Images/Typescript.webp" alt="TypeScript" width="44" height="44" loading="lazy"></div>
+                            <div title="Java"><img src="Images/Java.webp" alt="Java" width="44" height="44" loading="lazy"></div>
+                            <div title="JavaScript"><img src="Images/javascript.png" alt="JavaScript" width="44" height="44" loading="lazy"></div>
+                            <div title="AWS"><img src="Images/aws.jpg" alt="AWS" width="44" height="44" loading="lazy"></div>
+                            <div title="Terraform"><img src="Images/terraform.svg" alt="Terraform" width="44" height="44" loading="lazy"></div>
+                            <div title="Jenkins"><img src="Images/Jenkins.png" alt="Jenkins" width="44" height="44" loading="lazy"></div>
+                            <div title="CircleCI"><img src="Images/Circle-ci.png" alt="CircleCI" width="44" height="44" loading="lazy"></div>
+                            <div title="GitHub Actions"><img src="Images/Github-Action.png" alt="GitHub Actions" width="44" height="44" loading="lazy"></div>
+                            <div title="Ansible"><img src="Images/Ansible.jpg" alt="Ansible" width="44" height="44" loading="lazy"></div>
+                            <div title="Argo CD"><img src="Images/Argo.png" alt="Argo CD" width="44" height="44" loading="lazy"></div>
+                            <div title="SonarQube"><img src="Images/Sonar.png" alt="SonarQube" width="44" height="44" loading="lazy"></div>
+                            <div title="React"><img src="Images/react.png" alt="React" width="44" height="44" loading="lazy"></div>
+                            <div title="MariaDB"><img src="Images/Maria.png" alt="MariaDB" width="44" height="44" loading="lazy"></div>
+                            <div title="OpenStack"><img src="Images/openstack.png" alt="OpenStack" width="44" height="44" loading="lazy"></div>
+                            <div title="Google Cloud"><img src="Images/gcp.png" alt="Google Cloud" width="44" height="44" loading="lazy"></div>
+                            <div title="PyTest"><img src="Images/Pytest.svg" alt="PyTest" width="44" height="44" loading="lazy"></div>
+                            <div title="JUnit"><img src="Images/Junit.png" alt="JUnit" width="44" height="44" loading="lazy"></div>
+                            <div title="AWS CDK"><img src="Images/AWS-CDK.png" alt="AWS CDK" width="44" height="44" loading="lazy"></div>
+                            <div title="JSON"><img src="Images/json.png" alt="JSON" width="44" height="44" loading="lazy"></div>
+                            <div title="HTML"><img src="Images/HTML.png" alt="HTML" width="44" height="44" loading="lazy"></div>
+                        </div>
+                    </article>
+
+                    <article class="panel glass panel-opp stagger-item">
+                        <div class="infra-motif" aria-hidden="true">
+                            <svg viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 90 H120 M200 50 H280" stroke="#38bdf8" stroke-opacity="0.45" stroke-width="1.5"/>
+                                <path d="M120 90 L160 70 L200 50" stroke="#34d399" stroke-opacity="0.55" stroke-width="1.5"/>
+                                <circle cx="40" cy="90" r="6" fill="#0ea5e9"/>
+                                <circle cx="120" cy="90" r="6" fill="#38bdf8"/>
+                                <circle cx="160" cy="70" r="7" fill="#67e8f9"/>
+                                <circle cx="200" cy="50" r="6" fill="#34d399"/>
+                                <circle cx="280" cy="50" r="6" fill="#0ea5e9"/>
+                                <rect x="148" y="58" width="24" height="24" rx="6" stroke="#7dd3fc" stroke-opacity="0.7"/>
+                            </svg>
+                        </div>
+                        <h3>Now at Zeus Labs</h3>
+                        <p>Based in London, UK — architecting multi-account AWS, event-driven GPU platforms, and AI-native observability for production logistics systems.</p>
+                        <div class="panel-actions">
+                            <a href="#contact" class="btn">Get in touch</a>
+                            <button id="open-modal-button" class="btn" type="button">Achievements &amp; certs</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-contrast voltage metrics band -->
+        <section class="stats-section voltage-band" aria-label="Impact metrics">
+            <div class="container stats-grid" data-stagger>
+                <article class="stat stagger-item">
+                    <p class="stat-value"><span data-count="4" data-suffix="+">0</span></p>
+                    <p class="stat-label">Years shipping DevOps systems</p>
+                </article>
+                <article class="stat stagger-item">
+                    <p class="stat-value"><span data-count="30" data-prefix="&lt;" data-suffix="s">0</span></p>
+                    <p class="stat-label">Warm GPU pool cold-start latency</p>
+                </article>
+                <article class="stat stagger-item">
+                    <p class="stat-value"><span data-count="17">0</span></p>
+                    <p class="stat-label">Production Grafana dashboards</p>
+                </article>
+                <article class="stat stagger-item">
+                    <p class="stat-value"><span data-count="25" data-suffix="%">0</span></p>
+                    <p class="stat-label">Baseline AWS spend reduction</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="journey" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-index">02 — Timeline</p>
+                    <h2 class="section-title title-mask">My journey</h2>
+                    <p class="section-lead">Education and roles that shaped how I ship reliable systems.</p>
+                </div>
+                <div class="timeline" data-stagger>
+                    <div class="timeline-item glass stagger-item current">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">Feb 2026 – Present <span class="now-badge">Now</span></p>
+                        <h3>DevOps Engineer</h3>
+                        <p class="timeline-org">Zeus Labs · London, United Kingdom</p>
+                        <ul>
+                            <li>Architected and delivered multi-account AWS infrastructure across SIT, UAT, and production using CDK, reducing environment drift to near zero and enabling fully reproducible deployments across three isolated accounts.</li>
+                            <li>Designed and operated a production-grade, event-driven GPU provisioning platform, eliminating synchronous API timeout failures and improving provisioning reliability under retry and load scenarios by approximately 30–50%.</li>
+                            <li>Built end-to-end cost governance controls, including TTL shutdown, reaper jobs, and orphan reconciliation, eliminating orphaned GPU instances and reducing potential GPU cost leakage by approximately 20–35%.</li>
+                            <li>Implemented capacity-aware scheduling across instance families and availability zones, improving GPU provisioning success rates in capacity-constrained regions by approximately 25–40%.</li>
+                            <li>Engineered warm GPU pools using scheduled Auto Scaling, reducing cold-start latency from 3–5 minutes to under 30 seconds for time-sensitive AI workloads.</li>
+                            <li>Built an AI-powered architecture documentation platform in Python using Amazon Bedrock Claude, automatically generating and publishing application and infrastructure documentation from GitHub repositories to Confluence.</li>
+                            <li>Developed self-healing ALB wiring automation, removing manual intervention and reducing deployment-related incidents by approximately 40%.</li>
+                            <li>Delivered an ECS Fargate platform with SQS-driven auto-scaling, dynamically scaling with workload demand and reducing baseline over-provisioning by approximately 20–30%.</li>
+                            <li>Built a private API architecture using VPC endpoints and IAM authentication, removing public exposure of internal systems and significantly reducing the internal service attack surface.</li>
+                            <li>Provisioned scalable backend infrastructure using Aurora Serverless v2, Redis/Valkey, EFS, ALB, and Cloud Map to support horizontally scalable microservices with minimal operational overhead.</li>
+                            <li>Designed multi-stage CI/CD pipelines using CodePipeline V2 and GitHub Actions, reducing manual deployment effort by approximately 50% and improving release consistency across environments.</li>
+                            <li>Implemented SSM Parameter Store and Secrets Manager configuration management, reducing repeated task-definition changes and configuration-related deployment churn by approximately 70%.</li>
+                            <li>Built a centralised observability platform using Grafana, Prometheus, Loki, and Tempo, providing full-stack visibility across services and GPU workloads.</li>
+                            <li>Delivered 17 dashboards and more than 30 alert rules, improving incident detection and reducing mean time to resolution by approximately 30–40%.</li>
+                            <li>Designed and delivered an enterprise AWS observability platform with long-term log and metric retention through CloudWatch, Firehose, S3, Athena, and Grafana, alongside AI-powered anomaly detection across more than 90 infrastructure metrics.</li>
+                            <li>Reduced infrastructure costs through NAT optimisation, endpoint rationalisation, and metric-cardinality reduction, lowering baseline cloud spend by approximately 15–25% without affecting reliability.</li>
+                            <li>Enforced security best practices including IMDSv2, least-privilege IAM, encrypted storage, and private networking, supporting audit and compliance requirements.</li>
+                            <li>Increased infrastructure reliability through comprehensive Jest and Pytest coverage, reducing regression risk across distributed workflows and infrastructure deployments.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass stagger-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2024 – 2025</p>
+                        <h3>MSc Software Engineering</h3>
+                        <p class="timeline-org">Cardiff University</p>
+                        <ul>
+                            <li>Predicted grade: Distinction</li>
+                            <li>Coursework: DevOps, OOP, Web Technologies</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass stagger-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">Jan 2022 – June 2024</p>
+                        <h3>Associate DevOps Engineer</h3>
+                        <p class="timeline-org">SAP LABS, India</p>
+                        <ul>
+                            <li>Designed and implemented an AWS Lambda function for automated creation and management of RabbitMQ users, improving operational efficiency by reducing manual interventions by 30 percent.</li>
+                            <li>Leveraged AWS Secrets Manager to automate password rotation for RabbitMQ users, enhancing security compliance and reducing risk of credential exposure by 40 percent.</li>
+                            <li>Authored Python scripts to fetch server details in JSON format, leading to the creation of a real-time dashboard, improving operational visibility by 35 percent.</li>
+                            <li>Configured AWS EventBridge to track key RabbitMQ server metrics, improving real-time alerting and reducing response time to server issues by 25 percent.</li>
+                            <li>Led the migration from Datadog to Prometheus, cutting down the organization’s monitoring costs by 25 percent.</li>
+                            <li>Implemented floating IP setup for HAproxy Load Balancer, improving system failover capabilities and reducing downtime by 15 percent.</li>
+                            <li>Provisioned new clusters for onboarding customers using Terraform, allowing for the rapid deployment of services with consistent configurations.</li>
+                            <li>Conducted unit and integration testing for REST APIs using the PyTest framework, increasing code quality and reducing bugs by 30 percent.</li>
+                            <li>Configured GitHub apps for actions with Personal Access Tokens (PATs), enhancing workflow automation and security.</li>
+                            <li>Built and maintained GitOps pipelines from Signavio GitHub to SAP Enterprise, streamlining code deployment across teams.</li>
+                            <li>Provisioned RabbitMQ infrastructure from scratch for the organization using AWS CDK with TypeScript, facilitating reliable message queuing for 200+ microservices.</li>
+                            <li>Integrated CircleCI and GitHub Actions to clone Signavio GitHub to SAP Enterprise, improving code synchronization efficiency by 40 percent.</li>
+                            <li>Managed Kubernetes clusters, ensuring 99.8 percent uptime for microservices, resulting in a seamless and reliable customer experience.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass stagger-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">June 2021 – Dec 2021</p>
+                        <h3>DevOps Engineer</h3>
+                        <p class="timeline-org">Bigstep Technologies</p>
+                        <ul>
+                            <li>Developed Ansible Playbooks to maintain and upgrade servers, reducing manual update efforts by 50 percent and ensuring consistent configurations.</li>
+                            <li>Designed a one-click deployment pipeline, leading to a 40 percent reduction in deployment time and accelerating release cycles.</li>
+                            <li>Created Bash scripts for automated LAMP stack installation, decreasing server provisioning time by 30 minutes per instance.</li>
+                            <li>Authored Dockerfiles to build Docker images, streamlining containerization and enabling efficient deployment of 10+ microservices.</li>
+                            <li>Implemented Python scripts for automated log removal, reducing disk space usage by 20 percent and enhancing system performance by routinely cleaning logs older than 30 days.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item glass stagger-item">
+                        <div class="timeline-dot"></div>
+                        <p class="timeline-date">2017 – 2021</p>
+                        <h3>B.Tech Electronics &amp; Communication</h3>
+                        <p class="timeline-org">Manipal University Jaipur</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="section-index">03 — Selected work</p>
+                    <h2 class="section-title title-mask">Projects</h2>
+                    <p class="section-lead">Selected work across CI/CD, cloud provisioning, and full-stack delivery.</p>
+                </div>
+                <div class="projects-grid" data-stagger>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">01</span>
+                        <div>
+                            <h3>Helical ML Workflow</h3>
+                            <p>Containerised Helical/scGPT pipeline orchestrated with Airflow, Docker, Prometheus, and Grafana — trigger a DAG, run the model, and watch metrics end to end.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">Airflow</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Prometheus</span>
+                                <span class="tag">Grafana</span>
+                            </div>
+                            <a href="https://github.com/pk9810/helical-implementation" class="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+                        </div>
+                    </article>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">02</span>
+                        <div>
+                            <h3>Sports League Website</h3>
+                            <p>Full-stack industrial project for CreditSafe with a Spring Boot backend, interactive frontend, and MariaDB for data management.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">Spring Boot</span>
+                                <span class="tag">MariaDB</span>
+                            </div>
+                            <a href="#" class="project-link">View on GitHub →</a>
+                        </div>
+                    </article>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">03</span>
+                        <div>
+                            <h3>CI with Jenkins for Node.js</h3>
+                            <p>Deployed a Node.js app on an EC2 instance using Jenkins for CI, with automated deployment via webhooks and containers.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">AWS EC2</span>
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <a href="#" class="project-link">View on GitHub →</a>
+                        </div>
+                    </article>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">04</span>
+                        <div>
+                            <h3>CI with CircleCI for Python</h3>
+                            <p>Integrated CircleCI with GitHub to automatically build, test, and deploy a Python application onto an EC2 machine.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">CircleCI</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">AWS</span>
+                            </div>
+                            <a href="#" class="project-link">View on GitHub →</a>
+                        </div>
+                    </article>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">05</span>
+                        <div>
+                            <h3>CD with Argo CD</h3>
+                            <p>Utilized Argo CD for continuous deployment on a Kubernetes cluster, pulling from a Docker image registry.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">Argo CD</span>
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                            <a href="#" class="project-link">View on GitHub →</a>
+                        </div>
+                    </article>
+                    <article class="project glass shine stagger-item">
+                        <span class="project-num">06</span>
+                        <div>
+                            <h3>Cloud Apache Deployment</h3>
+                            <p>Provisioned a secure AWS infrastructure using Terraform to deploy an Apache website with a full CI/CD pipeline.</p>
+                        </div>
+                        <div>
+                            <div class="tags">
+                                <span class="tag">Terraform</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">SonarQube</span>
+                            </div>
+                            <a href="#" class="project-link">View on GitHub →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container contact-grid">
+                <div class="contact-model-wrap glass reveal" id="contact-model-host">
+                    <div class="contact-placeholder" id="contact-model-placeholder">Loading interactive model…</div>
+                </div>
+                <div class="contact-copy reveal" style="transition-delay: 100ms;">
+                    <p class="section-index">04 — Contact</p>
+                    <h2 class="section-title contact-title">Let’s connect</h2>
+                    <p class="section-lead contact-lead">Opportunity, project idea, or a chat about cloud and automation — send a note.</p>
+                    <form id="contact-form" class="glass-form" action="https://formsubmit.co/kesarwaniprateek98@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <div class="form-field">
+                            <label for="full-name" class="sr-only">Full name</label>
+                            <input type="text" name="full-name" id="full-name" placeholder="Full name" required autocomplete="name">
+                        </div>
+                        <div class="form-field">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email address" required autocomplete="email">
+                        </div>
+                        <div class="form-field">
+                            <label for="message" class="sr-only">Message</label>
+                            <textarea name="message" id="message" rows="4" placeholder="Your message" required></textarea>
+                        </div>
+                        <button id="submit-button" class="btn btn-primary magnetic" data-magnetic type="submit">
+                            <span>Send message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800/50">
-        <div class="container mx-auto px-6 py-8 text-center text-slate-500 reveal">
-             <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" target="_blank" class="hover:text-sky-400 transition-colors" title="LinkedIn">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+    <footer class="site-footer">
+        <div class="container reveal">
+            <div class="socials">
+                <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
                 </a>
-                <a href="#" target="_blank" class="hover:text-sky-400 transition-colors" title="GitHub">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <a href="https://github.com/pk9810" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 </a>
-             </div>
-             <p>&copy; 2025 Prateek Kesarwani. All Rights Reserved.</p>
+            </div>
+            <p>&copy; 2026 Prateek Kesarwani. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Modal HTML -->
-    <div id="bullet-points-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 p-4 opacity-0 pointer-events-none">
-        <div id="modal-content" class="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-2xl w-full transform scale-95">
-            <div class="flex justify-between items-center mb-6">
-                 <h2 class="text-2xl font-bold text-slate-100">Achievements & Certifications</h2>
-                 <button id="close-modal-button" class="text-slate-400 hover:text-white text-3xl leading-none">&times;</button>
+    <div id="bullet-points-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div id="modal-content" class="modal-panel glass">
+            <div class="modal-header">
+                <h2 id="modal-title">Achievements &amp; certifications</h2>
+                <button id="close-modal-button" class="modal-close" type="button" aria-label="Close">&times;</button>
             </div>
-            <div class="text-slate-300 space-y-4">
-                <div>
-                    <h3 class="font-bold text-sky-400 mb-2">Key Achievements</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li>Reduced manual operational interventions by 30% by automating RabbitMQ user management with AWS Lambda.</li>
-                        <li>Cut organizational monitoring costs by 25% by leading the migration from Datadog to Prometheus.</li>
-                        <li>Improved system failover capabilities and reduced downtime by 15% by implementing a floating IP setup for HAproxy.</li>
-                        <li>Decreased server provisioning time by 30 minutes per instance with automated LAMP stack installation scripts.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold text-sky-400 mb-2">Certifications</h3>
-                     <ul class="list-disc list-inside space-y-2">
-                        <li>AWS Certified Solutions Architect - Associate</li>
-                        <li>IBM MQ Developer Essentials</li>
-                        <li>Linux Administration Bootcamp: Go from Beginner to Advanced</li>
-                        <li>SAP Python for Beginners</li>
-                    </ul>
-                </div>
+            <div class="modal-body">
+                <h3>Key achievements</h3>
+                <ul>
+                    <li>Cut GPU cold-start from 3–5 minutes to under 30 seconds with warm Auto Scaling pools at Zeus Labs.</li>
+                    <li>Lowered baseline AWS spend by ~15–25% through NAT optimisation, endpoint rationalisation, and metric-cardinality reduction.</li>
+                    <li>Shipped 17 Grafana dashboards and 30+ alert rules, reducing mean time to resolution by ~30–40%.</li>
+                    <li>Reduced configuration-related deployment churn by ~70% with SSM Parameter Store and Secrets Manager.</li>
+                    <li>Cut organisational monitoring costs by 25% by leading the Datadog → Prometheus migration at SAP Labs.</li>
+                </ul>
+                <h3>Certifications</h3>
+                <ul>
+                    <li>AWS Certified Solutions Architect – Associate</li>
+                    <li>IBM MQ Developer Essentials</li>
+                    <li>Linux Administration Bootcamp: Go from Beginner to Advanced</li>
+                    <li>SAP Python for Beginners</li>
+                </ul>
             </div>
         </div>
     </div>
-    
-    <!-- Custom JavaScript -->
-    <script src="script.js"></script>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
-
