@@ -66,8 +66,9 @@
   --font-body: "DM Sans", "Space Grotesk", sans-serif;
   --radius: 16px;
   --radius-sm: 10px;
-  --container: 1160px;
+  --container: 1400px;
   --header-h: 74px;
+  --vh: 100dvh;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --glow-x: 50%;
   --glow-y: 30%;
@@ -82,11 +83,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
@@ -95,6 +98,8 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 body.theme-voltage {
@@ -292,6 +297,12 @@ textarea {
   margin-inline: auto;
 }
 
+@media (max-width: 767px) {
+  .container {
+    width: min(100% - 1.5rem, var(--container));
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -317,8 +328,10 @@ textarea {
 /* ---------- Header ---------- */
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
   height: var(--header-h);
   display: flex;
@@ -327,6 +340,7 @@ textarea {
   background: rgba(3, 5, 10, 0.45);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
+  padding-top: env(safe-area-inset-top);
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
@@ -431,6 +445,11 @@ textarea {
   display: none;
   flex-direction: column;
   gap: 0.25rem;
+  position: fixed;
+  top: calc(var(--header-h) + env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  z-index: 49;
   padding: 0.75rem 1.25rem 1.25rem;
   border-bottom: 1px solid var(--border);
   background: rgba(3, 5, 10, 0.96);
@@ -463,10 +482,11 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-h));
+  min-height: 100dvh;
+  height: 100dvh;
   display: grid;
   align-items: center;
-  padding: 3.5rem 0 4.5rem;
+  padding: calc(var(--header-h) + env(safe-area-inset-top)) 0 1.5rem;
   overflow: hidden;
 }
 
@@ -495,12 +515,15 @@ textarea {
   display: grid;
   gap: 2.5rem;
   align-items: center;
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+  height: 100%;
 }
 
 @media (min-width: 960px) {
   .hero-inner {
-    grid-template-columns: 1.08fr 0.92fr;
-    gap: 2rem;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 1.5rem 3rem;
   }
 }
 
@@ -546,7 +569,7 @@ textarea {
   margin: 0 0 1.35rem;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(3.6rem, 10vw, 7rem);
+  font-size: clamp(2.6rem, 7.2vw, 7.2rem);
   line-height: 0.86;
   letter-spacing: -0.06em;
   color: var(--text-bright);
@@ -673,8 +696,7 @@ textarea {
 .hero-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-height: min(74vh, 580px);
+  height: min(calc(100dvh - var(--header-h) - 3rem), 720px);
   margin-inline: auto;
   isolation: isolate;
 }
@@ -826,6 +848,10 @@ textarea {
 
 .section {
   padding: 5.5rem 0;
+}
+
+.pin-section + .section {
+  padding-top: 3rem;
 }
 
 .section-head {
@@ -1465,16 +1491,16 @@ textarea {
 
 .pin-section {
   position: relative;
-  height: 220vh;
+  height: 118svh;
 }
 
 .pin-sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100svh;
   display: grid;
   place-content: center;
-  padding: 2rem;
+  padding: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 1rem) 1.25rem 1.5rem;
   text-align: center;
 }
 
@@ -1656,11 +1682,121 @@ textarea {
   }
 }
 
+@media (max-width: 959px) {
+  .hero {
+    height: auto;
+    min-height: 100dvh;
+    padding: calc(var(--header-h) + env(safe-area-inset-top) + 1rem) 0 2.25rem;
+  }
+
+  .hero-inner {
+    width: min(100% - 1.5rem, var(--container));
+    height: auto;
+    gap: 1.25rem;
+  }
+
+  .hero-brand {
+    font-size: clamp(2.35rem, 11vw, 3.4rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-headline {
+    font-size: 1.05rem;
+    max-width: none;
+  }
+
+  .hero-support {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-stage {
+    width: min(70vw, 300px);
+    height: min(70vw, 300px);
+    max-height: 300px;
+  }
+
+  .hero-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+}
+
 @media (max-width: 767px) {
+  :root {
+    --header-h: 64px;
+  }
+
   .cursor-glow,
   .cursor-dot,
   .cursor-ring { display: none; }
+
   .brand-text { display: none; }
-  .pin-section { height: 180vh; }
-  .hero-watermark { opacity: 0.55; }
+
+  .hero-watermark {
+    font-size: clamp(3.5rem, 28vw, 8rem);
+    opacity: 0.35;
+  }
+
+  .orbit,
+  .stage-frame {
+    display: none;
+  }
+
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .pin-section {
+    height: 112svh;
+  }
+
+  .pin-line {
+    font-size: clamp(1.65rem, 8vw, 2.4rem);
+    max-width: 18ch;
+  }
+
+  .stats-section.voltage-band {
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  .stats-section.voltage-band::before {
+    display: none;
+  }
+
+  .stat-value {
+    font-size: 2.2rem;
+  }
+
+  .contact-model-wrap {
+    min-height: 240px;
+  }
+
+  .contact-model-wrap model-viewer,
+  .contact-model-wrap .contact-model {
+    height: 260px;
+  }
+
+  .timeline-item {
+    padding: 1rem 1rem 1rem 2.35rem;
+  }
+
+  .modal-panel {
+    padding: 1.2rem;
+    max-height: min(88dvh, 720px);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+    gap: 0.65rem;
+  }
 }

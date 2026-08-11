@@ -30,10 +30,9 @@
   const updatePinWords = () => {
     if (!pinSection || !pinWords.length) return;
     const rect = pinSection.getBoundingClientRect();
-    const total = pinSection.offsetHeight - window.innerHeight;
-    const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
-    const pct = scrolled / Math.max(total, 1);
-    const activeCount = Math.floor(pct * pinWords.length + 0.001);
+    const span = Math.max(pinSection.offsetHeight - window.innerHeight, 1);
+    const pct = Math.min(1, Math.max(0, -rect.top / span));
+    const activeCount = Math.ceil(pct * pinWords.length) - 1;
 
     pinWords.forEach((word, i) => {
       word.classList.toggle("active", i <= activeCount);
