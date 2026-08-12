@@ -1,6 +1,8 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
+  const narrowScreen = window.matchMedia("(max-width: 767px)");
+  const isNarrow = () => narrowScreen.matches;
 
   // --- Mobile menu ---
   const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -29,6 +31,10 @@
 
   const updatePinWords = () => {
     if (!pinSection || !pinWords.length) return;
+    if (isNarrow()) {
+      pinWords.forEach((word) => word.classList.add("active"));
+      return;
+    }
     const rect = pinSection.getBoundingClientRect();
     const span = Math.max(pinSection.offsetHeight - window.innerHeight, 1);
     const pct = Math.min(1, Math.max(0, -rect.top / span));
@@ -56,6 +62,7 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", updatePinWords, { passive: true });
+  narrowScreen.addEventListener("change", updatePinWords);
 
   if (reduceMotion) {
     pinWords.forEach((w) => w.classList.add("active"));
@@ -271,18 +278,21 @@
   const contactPlaceholder = document.getElementById("contact-model-placeholder");
 
   const mountContactModel = () => {
-    if (!contactHost || contactHost.dataset.loaded === "true") return;
+    if (!contactHost || contactHost.dataset.loaded === "true" || isNarrow()) return;
     contactHost.dataset.loaded = "true";
 
     const viewer = document.createElement("model-viewer");
     viewer.className = "contact-model";
     viewer.setAttribute("src", "models/RobotExpressive.glb");
     viewer.setAttribute("alt", "Interactive 3D robot model");
-    viewer.setAttribute("camera-controls", "");
     viewer.setAttribute("auto-rotate", "");
+    viewer.setAttribute("disable-zoom", "");
+    viewer.setAttribute("disable-pan", "");
     viewer.setAttribute("interaction-prompt", "none");
     viewer.setAttribute("shadow-intensity", "1");
     viewer.setAttribute("loading", "lazy");
+    viewer.setAttribute("touch-action", "pan-y");
+    if (finePointer) viewer.setAttribute("camera-controls", "");
     if (reduceMotion) {
       viewer.removeAttribute("auto-rotate");
     }
@@ -291,7 +301,7 @@
     contactHost.appendChild(viewer);
   };
 
-  if (contactHost) {
+  if (contactHost && !isNarrow()) {
     if (!("IntersectionObserver" in window)) {
       mountContactModel();
     } else {
@@ -307,6 +317,21 @@
       modelObserver.observe(contactHost);
     }
   }
+
+  const tuneHeroModel = () => {
+    document.querySelectorAll(".hero-model").forEach((el) => {
+      el.setAttribute("touch-action", "pan-y");
+      el.setAttribute("disable-zoom", "");
+      el.setAttribute("disable-pan", "");
+      if (isNarrow() || !finePointer) {
+        el.removeAttribute("camera-controls");
+      } else {
+        el.setAttribute("camera-controls", "");
+      }
+    });
+  };
+  tuneHeroModel();
+  narrowScreen.addEventListener("change", tuneHeroModel);
 
   if (reduceMotion) {
     document.querySelectorAll("model-viewer[auto-rotate]").forEach((el) => {
