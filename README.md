@@ -21,4 +21,5 @@ Static 3D portfolio for Vercel Hobby. No build step, no serverless functions, no
 python3 -m http.server
 ```
 
+
 Open http://localhost:8000
